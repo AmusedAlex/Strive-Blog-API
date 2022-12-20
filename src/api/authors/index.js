@@ -51,7 +51,7 @@ authorsRouter.post("/", (req, res) => {
 
       fs.writeFileSync(authorsJSONPath, JSON.stringify(authorsArray));
 
-      res.status(201).send({ newAuthor });
+      res.status(201).send(newAuthor);
     } else {
       res.status(400).send(email + " already exists.");
     }
