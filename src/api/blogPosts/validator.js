@@ -52,29 +52,6 @@ const postSchema = {
 
 export const checksPostSchema = checkSchema(postSchema);
 
-const blogPostSchema = {
-  category: {
-    in: ["body"],
-    isString: {
-      errorMessage: "Category is a mandatory field and needs to be a string!",
-    },
-  },
-  title: {
-    in: ["body"],
-    isString: {
-      errorMessage: "Title is a mandatory field and needs to be a string!",
-    },
-  },
-  cover: {
-    in: ["body"],
-    isString: {
-      errorMessage: "Cover is a mandatory field and needs to be a URL string!",
-    },
-  },
-};
-
-export const checksBlogPostsSchema = checkSchema(blogPostSchema);
-
 export const triggerBadRequest = (req, res, next) => {
   // 1. Check if previous middleware ( checksBlogPostsSchema) has detected any error in req.body
   const errors = validationResult(req);
