@@ -37,7 +37,7 @@ const postSchema = {
   },
   author: {
     name: {
-      in: ["body.author"],
+      in: ["body"],
       isString: {
         errorMessage:
           "Author name is a mandatory field and needs to be a String.",
