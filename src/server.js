@@ -8,6 +8,7 @@ import {
   badRequestHandler,
   unauthorizedHandler,
 } from "./errorHandlers.js";
+import filesRouter from "./api/pdf/index.js";
 
 const server = express();
 
@@ -19,6 +20,7 @@ server.use(express.json());
 
 // ****************** ENDPOINTS *********************
 server.use("/blogPosts", blogPostsRouter);
+server.use("/download", filesRouter);
 
 // ****************** ERROR HANDLERS ****************
 server.use(badRequestHandler); // 400
