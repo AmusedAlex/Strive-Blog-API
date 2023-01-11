@@ -1,6 +1,6 @@
 [
   {
-    "category": 1,
+    "category": "horror",
     "title": "Son of a Snitch",
     "cover": "https://placekitten.com/300/300",
     "readTime": { "value": 2, "unit": "minute" },
@@ -14,7 +14,7 @@
     "updatedAt": "2022-12-21T15:54:38.676Z"
   },
   {
-    "category": 1,
+    "category": "thriller",
     "title": "Game of Thrones",
     "cover": "https://placekitten.com/300/300",
     "readTime": { "value": 2, "unit": "minute" },
@@ -28,7 +28,7 @@
   },
   {
     "category": "comedy",
-    "title": 1,
+    "title": "Book of Ra",
     "cover": "https://placekitten.com/300/300",
     "readTime": { "value": 2, "unit": "minute" },
     "author": {
@@ -41,7 +41,7 @@
   },
   {
     "category": "comedy",
-    "title": "Game of Thrones",
+    "title": "Lof of the Rings",
     "cover": "https://placekitten.com/300/300",
     "readTime": { "value": 2, "unit": "minute" },
     "author": {
@@ -54,7 +54,7 @@
   },
   {
     "category": "comedy",
-    "title": "Game of Thrones",
+    "title": "The Simpsons",
     "cover": "https://placekitten.com/300/300",
     "readTime": { "value": "2", "unit": "minute" },
     "author": {
@@ -67,7 +67,7 @@
   },
   {
     "category": "comedy",
-    "title": "Game of Thrones",
+    "title": "Two and a Half Men",
     "cover": "https://placekitten.com/300/300",
     "readTime": { "value": "2", "unit": "minute" },
     "author": { "name": 1, "avatar": "https://ui-avatars.com/api/?name=1" },
@@ -77,7 +77,7 @@
   },
   {
     "category": "comedy",
-    "title": "Game of Thrones",
+    "title": "Abiodun the Lion",
     "cover": "https://placekitten.com/300/300",
     "readTime": { "unit": "minute" },
     "author": {
@@ -90,7 +90,7 @@
   },
   {
     "category": "comedy",
-    "title": "Game of Thrones",
+    "title": "Olaf the Snowman",
     "cover": "https://placekitten.com/300/300",
     "author": {
       "name": "Thomas Gottschalk",
@@ -102,7 +102,7 @@
   },
   {
     "category": "comedy",
-    "title": "Game of Thrones",
+    "title": "Herkules",
     "cover": "https://placekitten.com/300/300",
     "readTime": { "value": "2", "unit": "minute" },
     "author": { "name": 1, "avatar": "https://ui-avatars.com/api/?name=1" },
@@ -112,7 +112,7 @@
   },
   {
     "category": "comedy",
-    "title": "Game of Thrones",
+    "title": "The Matrix",
     "cover": "https://placekitten.com/300/300",
     "readTime": { "value": "2", "unit": "minute" },
     "author": { "avatar": "https://ui-avatars.com/api/?name=undefined" },

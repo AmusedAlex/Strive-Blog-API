@@ -7,22 +7,36 @@ import { getPDFreadableStream } from "../../lib/pdf-tools.js";
 import fs from "fs";
 
 const filesRouter = express.Router();
+const blogPostsJSONPath = join(
+  dirname(fileURLToPath(import.meta.url)),
+  "../blogPosts/blogPosts.json"
+);
+const getBlogPosts = () => JSON.parse(fs.readFileSync(blogPostsJSONPath));
 
 filesRouter.get("/pdf", (req, res, next) => {
-  const blogPostsJSONPath = join(
-    dirname(fileURLToPath(import.meta.url)),
-    "../blogPosts/blogPosts.json"
-  );
-  console.log(
-    "🚀 ~ file: index.js:17 ~ filesRouter.get ~ blogPostsJSONPath",
-    blogPostsJSONPath
-  );
-
-  const getBlogPosts = () => JSON.parse(fs.readFileSync(blogPostsJSONPath));
-
   const blogPostsArray = getBlogPosts();
 
-  res.setHeader("Content-Disposition", "attachment; filename=test.pdf");
+  res.setHeader("Content-Disposition", "attachment; filename=blogPosts.pdf");
+
+  const source = getPDFreadableStream(blogPostsArray);
+  const destination = res;
+  pipeline(source, destination, (err) => {
+    if (err) console.log(err);
+  });
+});
+
+filesRouter.get("/pdf/:blogPostId", (req, res, next) => {
+  const blogPosts = getBlogPosts();
+
+  const blogPost = blogPosts.find(
+    (blogPost) => blogPost.id === req.params.blogPostId
+  );
+
+  const blogPostsArray = [];
+
+  blogPostsArray.push(blogPost);
+
+  res.setHeader("Content-Disposition", "attachment; filename=blogPosts.pdf");
 
   const source = getPDFreadableStream(blogPostsArray);
   const destination = res;
