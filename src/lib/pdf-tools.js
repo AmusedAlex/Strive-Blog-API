@@ -10,9 +10,19 @@ export const getPDFreadableStream = (blogsArray) => {
   const printer = new PdfPrinter(fonts);
 
   const docDefinition = {
-    content: blogsArray.map((blogPost) => {
-      return [blogPost.title, blogPost.category, blogPost.price];
-    }),
+    content: [
+      { text: "This is a header", style: "header" },
+      blogsArray.map((blogPost) => {
+        return [blogPost.title, blogPost.category, blogPost.price];
+      }),
+    ],
+    style: {
+      // does not work for undefinable reasons
+      header: {
+        fontSize: 48,
+        bold: true,
+      },
+    },
   };
 
   const pdfReadableStream = printer.createPdfKitDocument(docDefinition);
