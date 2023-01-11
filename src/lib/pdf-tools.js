@@ -16,11 +16,10 @@ export const getPDFreadableStream = (blogsArray) => {
         return [blogPost.title, blogPost.category, blogPost.price];
       }),
     ],
-    style: {
+    styles: {
       // does not work for undefinable reasons
       header: {
         fontSize: 48,
-        bold: true,
       },
     },
   };
