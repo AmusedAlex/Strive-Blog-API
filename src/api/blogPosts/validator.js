@@ -43,6 +43,13 @@ const postSchema = {
           "Author name is a mandatory field and needs to be a String.",
       },
     },
+    email: {
+      in: ["body"],
+      isString: {
+        errorMessage:
+          "Author email is a mandatory field and needs to be a String.",
+      },
+    },
   },
   content: {
     in: ["body"],

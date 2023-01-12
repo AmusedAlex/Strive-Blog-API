@@ -5,12 +5,13 @@ import uniqid from "uniqid";
 import fs from "fs";
 import httpErrors from "http-errors";
 import { checksPostSchema, triggerBadRequest } from "./validator.js";
+import { sendConfirmationMail } from "../../lib/email-tools.js";
 
 const { NotFound } = httpErrors;
 
 const blogPostsRouter = express.Router();
 
-const blogPostsJSONPath = join(
+export const blogPostsJSONPath = join(
   dirname(fileURLToPath(import.meta.url)),
   "blogPosts.json"
 );
@@ -44,6 +45,7 @@ blogPostsRouter.post(
       blogPostsArray.push(newBlogPost);
 
       writeBlogPosts(blogPostsArray);
+      sendConfirmationMail(req.body.author.email);
 
       res.status(201).send({ id: newBlogPost.id });
     } catch (error) {

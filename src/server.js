@@ -8,7 +8,15 @@ import {
   badRequestHandler,
   unauthorizedHandler,
 } from "./errorHandlers.js";
-import filesRouter from "./api/pdf/index.js";
+import filesRouter from "./api/files/index.js";
+
+// import dotenv from "dotenv";
+// dotenv.config();
+
+// !OR in package.json =
+// "scripts": {
+//   "dev": "nodemon -r dotenv/config -e js ./src/server.js"
+// },
 
 const server = express();
 

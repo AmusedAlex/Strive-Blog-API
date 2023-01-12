@@ -1,4 +1,12 @@
+import { createReadStream } from "fs";
+import { dirname, join } from "path";
 import PdfPrinter from "pdfmake";
+import { fileURLToPath } from "url";
+
+export const blogPostsJSONPath = join(
+  dirname(fileURLToPath(import.meta.url)),
+  "../api/blogPosts/blogPosts.json"
+);
 
 export const getPDFreadableStream = (blogsArray) => {
   const fonts = {
@@ -17,7 +25,6 @@ export const getPDFreadableStream = (blogsArray) => {
       }),
     ],
     styles: {
-      // does not work for undefinable reasons
       header: {
         fontSize: 48,
       },
@@ -29,3 +36,6 @@ export const getPDFreadableStream = (blogsArray) => {
 
   return pdfReadableStream;
 };
+
+export const getBlogPostsJsonReadableStream = () =>
+  createReadStream(blogPostsJSONPath);
